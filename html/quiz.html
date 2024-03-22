@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" href="..//css/quiz.css">
+</head>
+<body>
+  <h1>Quiz</h1>
+  <a href="..//html/about me.html">Back</a>
+  <div id="question"></div>
+  <div id="options"></div>
+  <button id="submit">Submit</button>
+  <div id="result"></div>
+
+  <script>
+    // Quiz data
+    const quizData = [ //array of questions
+      {
+        question: "Which appetizer is commonly found in a Canadian three-course meal?",
+        options: ["Salmon", "Nachos with Guacamole", "Caprese Salad", "Spring rolls"],
+        answer: "Salmon"
+      },
+      {
+        question: "When will we know to flip the pancakes",
+        options: ["Bubbling on the top", "when it looks ready", "After 30 sec", "When the pancake batter is fully cooked"],
+        answer: "Bubbling on the top"
+      },
+      {
+        question: "Which dish is a classic Canadian appetizer made with french fries, cheese curds, and gravy?",
+        options: ["Bannock", "Nanaimo Bar", "Poutine", "Butter Tart"],
+        answer: "Poutine"
+      },
+      {
+        question: "What is the first step into making a pancake",
+        options: ["Preheating the griddle or pan", "Mix all the dry ingridents together", " Cracking the eggs into the batter", "Adding butter or oil to the cooking surface"],
+        answer: "Mix all the dry ingridents together"
+      },
+      {
+        question: "How long does it take to marinate the salmon",
+        options: ["A whole day", "30 mins", "1 week", "1 hour"],
+        answer: "30 mins"
+      }
+    ];
+
+    const questionElement = document.getElementById("question");//"question" element: where the quiz question will be displayed.
+    const optionsElement = document.getElementById("options");//"options" element: where the answer options will be displayed.
+    const submitButton = document.getElementById("submit");//"submit" button: used to submit the answer.
+    const resultElement = document.getElementById("result");//"result" element: where the quiz result will be displayed.
+
+    let currentQuestion = 0;//creates two variables, currentQuestion and score, whose initial values are used to track the index of the current question and the score, respectively.
+    let score = 0;
+
+    function loadQuestion() {//defines the function loadQuestion, which displays the current question and the available answers on the page.
+      const currentQuiz = quizData[currentQuestion];//using the currentQuestion index, get the data for the current question from the quizData array.
+      questionElement.innerText = currentQuiz.question;
+      optionsElement.innerHTML = "";
+
+      for (let i = 0; i < currentQuiz.options.length; i++) {
+        const option = document.createElement("button");
+        option.innerText = currentQuiz.options[i];
+        optionsElement.appendChild(option);
+        option.addEventListener("click", checkAnswer);
+      }
+    }
+
+    function checkAnswer(event) {//Defines a function checkAnswer that is called when an answer option button is clicked.
+      const selectedOption = event.target;//Retrieves the selected option button from the event target.
+      const answer = quizData[currentQuestion].answer;//Retrieves the correct answer for the current question from the quizData array.
+
+      if (selectedOption.innerText === answer) {
+        score++;
+      }
+
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      questionElement.style.display = "none";
+      optionsElement.style.display = "none";
+      submitButton.style.display = "none";
+
+      resultElement.innerHTML = `<h2>Your Score: ${score} out of ${quizData.length}</h2>`;//display result
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

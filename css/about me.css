@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+    
+
+    
+   
+}
+
+body{
+    background-color:royalblue;
+}
+
+img{
+    width: 100%;
+}
+
+#image{
+    
+    width: 100%;
+}
+
+.pic{
+    position: relative; bottom: 520px;
+    width: 25%;
+    background-color:white;
+    border: 2px outset black; 
+    text-align: center;
+    
+
+}
+
+
+.about-me{
+    text-align: center;
+    position: relative; top:30px;
+
+}
+
+.explain{
+    font-size: 14px;
+}
+
+a{
+    font-size: 20px;
+    color: black;
+}
+.nav-bar{
+    background-color: red;
+    width: 15%;
+    border: 2px outset black;
+    position: relative; bottom: 50px;
+
+}
+  
+
+
+.links{
+    background-color: white;
+    border: outset 2px black;
+    width: 14.5%;
+    position: relative; bottom: 6%;
+}
+

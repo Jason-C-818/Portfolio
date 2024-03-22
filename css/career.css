@@ -1,0 +1,99 @@
+h1{
+   text-align: center;
+}
+
+
+h3{
+  text-align: left;
+}
+
+
+.links{
+  background-color: red;
+  width: 14%;
+  position: relative; bottom: 50px;
+}
+
+a{
+  font-size: 20px;
+  color: black;
+}
+body{
+   background-color:powderblue;
+}
+
+
+
+
+ .computer{
+   width: 22%;
+   float: right;
+   position: relative; top: 50%; left: 22%;
+  
+ }
+
+
+.goal{
+  width: 22%;
+   float: right;
+
+
+ }
+
+
+.teamwork{
+  float: right;
+   width: 22%;
+   position: relative; top: 90%; left: 44%;
+  
+}
+
+
+.salary{
+   width: 13%;
+   float: right;
+   position: relative; top:80%;
+  
+}
+.courses{
+  background-color: white;
+  border: outset 2px black;
+   width: 20%;
+   float: left;
+  
+}
+
+.u-of-t{
+   float: right;
+   width: 11%;
+  
+}
+
+
+.tmu{
+   width: 10%;
+}
+
+
+.york{
+   width: 10%;
+   position: relative; left: 4%;
+}
+
+
+.mcgill{
+   width: 20%;
+   position: relative; left: 8%;
+}
+
+
+.western{
+   width: 15%;
+   position: relative; left: 12%;
+}
+
+
+.mcmaster{
+   width:10.5%;
+   position: relative; left: 17%;
+}

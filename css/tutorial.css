@@ -1,0 +1,63 @@
+img{
+  width: 100%;
+}
+h2{
+    text-align: center;
+}
+
+.breakfast{
+  background-color: azure;
+  border: outset 2px black;
+  width: 25%;
+  position: relative; bottom: 1px;
+ 
+  
+}
+
+.nav-bar{
+  background-color: red;
+  font-size: 20px;
+  width: 13%;
+  position: relative; bottom: 60px;
+  border: outset 2px black;
+  
+}
+
+a{
+  color: black;
+}
+
+.quiz{
+  float: right;
+  position: relative; bottom: 85px;
+  font-size: 20px;
+}
+
+
+body{
+  background-color: blueviolet;
+}
+
+h3{
+  text-align: center;
+}
+
+.lunch{
+  background-color: blue;
+  border: outset 2px black;
+  width: 25%;
+  position: absolute; top: 12%; left: 37%;
+}
+
+.dinner{
+  background-color: orange;
+  width: 25%;
+  border: outset 2px black;
+  position: absolute; top: 12%; left: 74%;
+  
+}
+
+button{
+  position: relative; left: 40%;
+  
+}

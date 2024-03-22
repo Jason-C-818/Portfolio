@@ -1,0 +1,85 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../css/lunch.css">
+    <h1>Animation Poutine</h1>
+    <a href="..//html/tutorial.html">Back</a>
+</head>
+<body>
+    <div class="description">
+      <img class="poutine"src="..//img/lunch.jpg">
+      <p>This food is called Poutine and it is a very popular Candian food which is very delicious</p>
+
+    </div>
+
+    <div class="slideshow-container">
+        <img class="slideshow-image active" src="../img/fries.jpg" alt="Image 1" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 1: Cut the potatoes into fries shapes.</div>
+        <img class="slideshow-image" src="../img/soak.jpg" alt="Image 2" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 2: Soak your potatoes</div>
+        <img class="slideshow-image" src="../img/rinse.jpg" alt="Image 3" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 3: Rinse your potatoes.</div>
+        <img class="slideshow-image" src="../img/fry.jpg" alt="Image 4" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 4: Heat oil to 300 degrees. Fry them in about 6 batches for 5-6 minutes. 
+          Don’t overcrowd them by placing too many in at a time, they won’t be 
+          as crispy. Place on a paper towel
+          </div>
+        <img class="slideshow-image" src="../img/golden.jpg" alt="Image 5" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 5: Rise oil to 400 degrees fry in batches until golden brown, about 5 minutes place it on a towel.</div>
+
+        <br><br><br><br><img class="slideshow-image" src="../img/gravy.jpg" alt="Image 6" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Gravy</div>
+        <img class="slideshow-image" src="../img/gravy ingredients.jpg" alt="Image 7" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Ingredients needed butter, hot water, chicken and beef stock cubes, flour, and onion or garlic pepper</div>
+        <img class="slideshow-image" src="../img/dissolve.jpg" alt="Image 8" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 1: melt the soup stock</div>
+        <img class="slideshow-image" src="../img/melt butter.jpg" alt="Image 9" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 2: In another pan melt the butter and mix it with flour</div>
+        <img class="slideshow-image" src="../img/stock.jpeg" alt="Image 10" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 3: Pour the stock into the melted butter that was mixed with flour</div>
+        <img class="slideshow-image" src="../img/pour gravy.jpg" alt="Image 11" onclick="toggleSlideshow()">
+        <div class="slideshow-caption">Step 4: Pour the gravy on the poutine</div>
+        
+    </div>
+
+    <div class="button-container">
+        <button onclick="previousSlide()">&larr; Previous</button>
+        <button onclick="nextSlide()">Next &rarr;</button>
+    </div>
+
+    <script>
+        var currentSlide = 0;//declares a variable called currentSlide and sets its initial value to be 0. The index of the currently displayed slide is tracked by this variable.
+        var slides = document.getElementsByClassName("slideshow-image");//retrieves and stores in the slides variable all elements with the class "slideshow-image".
+        var captions = document.getElementsByClassName("slideshow-caption");//assembles and saves in the captions variable all elements with the class "slideshow-caption" in their names.
+
+        function showSlide(n) {//defines the function showSlide, which accepts the argument n, which stands for the index of the slide that will be shown.
+          for (var i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");////removes the "active" class from each slide and hides each caption as it loops through all the slides and captions.
+            captions[i].style.display = "none";
+          }
+          
+          currentSlide = (n + slides.length) % slides.length;//adds n to slides.length and gets the modulus of slides.length to determine the new currentSlide index. By doing this, the index is guaranteed to wrap around to a valid range of slide indexes.
+          slides[currentSlide].classList.add("active");
+          captions[currentSlide].style.display = "block";//makes the slide at the currentSlide index visible by adding the "active" class to it.
+          //the currentSlide index's caption's display style property is changed from "block" to "display," making it visible.
+        }
+
+        function previousSlide() {
+          showSlide(currentSlide - 1);
+        }
+
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+
+        function toggleSlideshow() {//establishes the "active" class on the current slide as a function called toggleSlideshow. It either adds the "active" class if the current slide already has it or removes it if it doesn't.
+          if (slides[currentSlide].classList.contains("active")) {
+            slides[currentSlide].classList.remove("active");
+          } else {
+            slides[currentSlide].classList.add("active");
+          }
+        }
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+img{
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+#image {
+    width: 400px;
+    height: 400px;
+    position: relative; left: 34%;
+  }
+  
+  #caption {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  button{
+    position: relative; left: 47%;
+  }
+
+ html{
+    background-color: salmon;
+ }
+
+ .description{
+    background-color: white;
+    width: 20%;
+    border: outset 2px black;
+    position: relative; bottom: 455px;
+ }
+
+ a{
+    position: relative; bottom: 440px;
+    font-size: 20px;
+    color: black;
+ }

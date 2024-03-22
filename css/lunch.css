@@ -1,0 +1,50 @@
+img{
+    width: 12%;
+    
+}
+h1{
+    text-align: center;
+}
+
+.poutine{
+    width: 100%;
+}
+.description{
+    background-color: lightcoral;
+    border: outset 2px black;
+    width: 20%;
+}
+
+
+  .slideshow-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+
+  .slideshow-caption {
+    position: absolute; top: 98%;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  html{
+    background-color: skyblue;
+  }
+
+  a{
+    position: relative; bottom: 50px;
+    font-size: 20px;
+    color: black;
+  }

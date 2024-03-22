@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/about me.css">
+</head>
+<body>
+    <h1>Home</h1>
+    <div class="nav-bar">
+        <a href="../html/career.html">Career</a>
+        <a href="../html/tutorial.html">Tutorial</a>
+        <a href="../html/feedback.html">Feedback</a>
+    </div>
+
+    <div class="about-me">
+        <u><h3>My Name is Jason</h3></u>
+        <p>I am currently attending Millikin Mills High School.
+            In my first semester, my courses were Science, <br>Civics and Carrer, Computer Engineering, and English.
+            <br>This semester I am taking Computer Science, Math, Gym, and Communication Technology.
+        </p>
+
+        <u><h3>Describing myself</h3></u>
+        <p>I would describe my characteristics as active, mature, procrastinating,
+            and a responsible person. <br>Additionally, my strengths that I can describe myself as being able to have teamwork, organization, dedication, <br>and flexibility.
+        </p>
+
+        <u><h3>Hobbies</h3></u>
+        <p>Furthermore, I would say my hobbies are playing sports like basketball mostly and <br>playing video games like action games.</p>
+        
+        <u><h3>Favorite Foods</h3></u>
+        <p>Moreover, I am going to talk about my favourite food, and I have a lot of different favourites.
+            <br>that I love eating, even though it's not typically Canadian food. My favourite foods are steaks, burgers,
+            <br>ribs, chicken sandwiches, chicken wings, and pasta.
+        </p>
+        
+        <u><h3>Dream occupation</h3></u>
+        <p>Lastly, my dream occupation is computer science, and I will be talking about the occupation if you click on career.</p>
+    </div>
+
+    <div class="pic"> 
+        <img id="image" class="image" src="" alt="Picture">
+        <p class="quote">"Die with memories not with dreams"</p>
+        <p>This specific quote is my favourite because this picture of me
+            holding a hockey trophy and scoring a goal in the finals makes me remember a great achievement I got and
+            I had always wanted to win a trophy. I made it a reality by winning a trophy, which makes me remember
+            the hard work I put in to work for it.
+        </p>
+    </div>
+
+    
+
+    <script>
+        var images = [
+            "../img/myself.jpg",// array of images
+            "../img/jason.jpg",
+            
+        ];
+
+        var currentIndex = 0;//This variable will keep track of the current index of the image being displayed.
+        var imageElement = document.getElementById("image");
+
+        function changeImage() {
+            imageElement.src = images[currentIndex];
+            currentIndex = (currentIndex + 1) % images.length;//In this line, the currentIndex is increased by 1, and the length of the images array is used in the coefficient operation (%). This makes sure that when the currentIndex reaches the end of the array, it wraps around to zero. It enables an endless cycle of images in the slideshow.
+        }
+
+        // Call the changeImage function initially
+        changeImage();
+
+        // Call the changeImage function every 2 seconds (2000 milliseconds)
+        setInterval(changeImage, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+
+html{
+    background-color: aquamarine;
+}
+
+a{
+    position: relative; bottom: 65px;
+    font-size: 20px;
+}

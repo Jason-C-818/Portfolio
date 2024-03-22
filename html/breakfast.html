@@ -1,0 +1,112 @@
+<html>
+    <head>
+      
+        <h1>Animation Canadian breakfast</h1>
+        <a href="..//html/tutorial.html">Back</a>
+        <link rel="stylesheet" href="..//css/breakfast.css">
+    </head>
+
+    <body>
+    
+
+
+<body>
+    <div class="description">
+        <img src="..//img/breakfast.jpg">
+        <p>This is a simple Canadian breakfast with eggs, some kind
+            of meat like bacon or breakfast sausage, and pancakes. On this slide you will be able to see
+            the steps that has to be taken to make this delicous breakfast.
+        </p>
+    </div>
+    <div class="slideshow-container">
+        <img class="slideshow-image active" src="..//img/pancake.jpg" alt="Image 1">
+        <div class="slideshow-caption">Starting off with Pancakes ingredient needed</div>
+        <img class="slideshow-image" src="..//img/ingrident.jpg" alt="Image 2">
+        <div class="slideshow-caption"></div>
+        <img class="slideshow-image" src="..//img/dry ingrident.jpg" alt="Image 3">
+        <div class="slideshow-caption">Step 1: Mix all your dry ingredient  together.</div>
+        <img class="slideshow-image" src="..//img/wet ingrident.jpg" alt="Image 4">
+        <div class="slideshow-caption">Step 2: In a seperate bowl mix all your wet ingredient together.</div>
+        <img class="slideshow-image" src="..//img/pour.jpg" alt="Image 5">
+        <div class="slideshow-caption">Step 3: Pour your wet ingredient to the dry ingridents.</div>
+        <img class="slideshow-image" src="..//img/mix.jpg" alt="Image 6">
+        <div class="slideshow-caption">Step 4: Mix your dry and wet ingredients together</div>
+        <img class="slideshow-image" src="..//img/butter.jpg" alt="Image 7">
+        <div class="slideshow-caption">Step 5: Add a small amount of butter in a medium heat pan for it to melt.</div>
+        <img class="slideshow-image" src="..//img/pancake mix.jpg" alt="Image 8">
+        <div class="slideshow-caption">Step 6: Add your pancake mix in the medium heat pan.</div>
+        <img class="slideshow-image" src="..//img/bubbles.jpg" alt="Image 9">
+        <div class="slideshow-caption">Step 7: Flip the pancakes when you see bubbles forming, and once you flip them on the other side,
+          Use a spatula to check if it's good to take it out of the pan and repeat the process.</div>
+        <img class="slideshow-image" src="..//img/eggs.jpg" alt="Image 10">
+        
+        <div class="slideshow-caption">Next Eggs.</div>
+        <img class="slideshow-image" src="..//img/crack.jpg" alt="Image 11">
+        <div class="slideshow-caption">Step 1: Put cooking oil in the medium-heated pan, then crack the egg in the pan. Cook the egg longer for a crisp egg.
+          but if taken out of the pan fast, it will be a runnier egg.</div>
+          <img class="slideshow-image" src="..//img/meat.jpg" alt="Image 11">
+          
+          
+          <div class="slideshow-caption">Lastly Bacon and Canadian Sasuages</div>
+          <img class="slideshow-image" src="..//img/bacon.jpg" alt="Image 11">
+          <div class="slideshow-caption">Step 1: Put your bacon and breakfast sausages in a medium-heated pan, depending on how
+            You like your bacon crispy cook it for 5-6 minutes or if you want your bacon soft cook it for 4-5 minutes, 
+            and cook your breakfast sausages roughly for 5 minutes.
+          </div>
+
+
+      </div>
+
+
+
+  <div class="button-container">
+    <button onclick="startSlideshow()">Start</button>
+    <button onclick="stopSlideshow()">Stop</button>
+  </div>
+
+  <script>
+    var currentSlide = 0;
+    var slides = document.getElementsByClassName("slideshow-image");
+    var captions = [
+      "Caption for Image 1",
+      "Different Caption for Image 2",
+      "Custom Caption for Image 3"
+    ];
+    var slideshowInterval; //a variable slideshow is declared.The period to keep the reference to the slideshow's break timer.
+
+    function showSlide(n) {
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");//defines the function showSlide, which accepts the argument n, which stands for the slide's index. Each slide's "active" class is eliminated as it loops through all of the slides, effectively hiding them.
+  }
+
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add("active");//adds n to slides.length and gets the coefficient of slides.length to determine the currentSlide index. By doing this, the index is guaranteed to wrap around to a valid range of slide indexes. The slide at the currentSlide index is then made visible by adding the "active" class.
+
+  var captionElements = document.getElementsByClassName("slideshow-caption");
+  for (var j = 0; j < captionElements.length; j++) {
+    captionElements[j].style.display = "none";
+  }
+
+  captionElements[currentSlide].style.display = "block"; //identifies all elements with the class "slideshow-caption" and sets their display style property to "none" to make them invisible. The related caption is then made visible by setting the display style property of the captionElements at the currentSlide index to "block".
+}
+
+    function startSlideshow() {
+      if (slideshowInterval) {
+        return; // Slideshow already running
+      }
+
+      slideshowInterval = setInterval(function() {
+        showSlide(currentSlide + 1);
+      }, 3000); // Change slide every 3 seconds
+    }
+
+    function stopSlideshow() {
+      clearInterval(slideshowInterval);
+      slideshowInterval = null;
+    }
+
+    showSlide(currentSlide);
+  </script>
+
+    </body>
+</html>

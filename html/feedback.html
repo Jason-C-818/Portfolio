@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="..//css/feedback.css">
+</head>
+<body>
+  <h1>Feedback Page</h1>
+
+  <a href="..//html/about me.html">Back</a>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+
+  <label for="email"><br>Email:</label>
+  <input type="email" id="email">
+
+  <label for="message"><br>Message:</label>
+  <textarea id="message" rows="4" cols="50"></textarea>
+
+  <button onclick="sendFeedback()">Send Feedback</button>
+
+  <script>
+    function sendFeedback() {
+      var name = document.getElementById("name").value; //gets the ID "name"
+      var email = document.getElementById("email").value; //gets the ID "email"
+      var message = document.getElementById("message").value; //gets the ID "message"
+
+      // Check if any of the fields are empty
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields before sending feedback.");//When not filled out it alerts the user 
+        return;
+      }
+
+      var emailContent = "\nMessage: " + message;
+      window.open("mailto:349896787@gapps.yrdsb.ca?subject=Feedback&body=" + encodeURIComponent(emailContent));//when submited the mail will be sent to my gmail
+    }
+  </script>
+</body>
+</html>

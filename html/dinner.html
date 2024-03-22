@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Animation with Captions</title>
+  <link rel="stylesheet" href="..//css/dinner.css">
+</head>
+<body>
+  <h1>Maple Glazed Salmon Animation</h1>
+  <a href="..//html/tutorial.html">Back</a>
+  <img id="image" src="image1.jpg">
+  <div id="caption">Caption 1</div>
+  <button onclick="nextImage()">Next Image</button>
+  <div class="description">
+    <img src="..//img/salmon.jpg">
+    <p>For dinner is a maple glazed Salmon that is marinated in a sauce that include maple syrup, and 
+        since seafood is popular in Canada Salmon is the best food for Dinner.
+    </p>
+  </div>
+
+  <script>
+    var images = [
+      { src: "..//img/salmon ingredients.jpg", caption: "Step 1: Ingridents needed Salmon, Maple syrup, Garlic, and Seasoning" },
+      { src: "..//img/maple sauce.jpg", caption: "Step 2: Stir maple syrup, soy sauce, garlic, garlic salt, and pepper together in a small bowl." },
+      { src: "..//img/marinate.jpg", caption: "Step 3: Marinate the salmon with the Maple sauce and put it in the fridge for 30 mins" },
+      { src: "..//img/oven.jpg", caption: "Step 4: Put the salmon for abput 20 mins in 200 degree oven" },
+    
+    ]; // array of images and the captions
+
+    var currentIndex = 0;//creates a variable called currentIndex and sets its initial value to be 0. The index of the image that is currently being displayed is tracked by this variable.
+    var imageElement = document.getElementById("image");//uses the getElementById function to find the HTML element with the id "image" and adds it to the imageElement variable.
+    var captionElement = document.getElementById("caption");//uses the getElementById function to find the HTML element with the id "caption" and adds it to the captionElement variable.
+
+
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      imageElement.src = images[currentIndex].src;
+      captionElement.textContent = images[currentIndex].caption;
+    }//defines the next image function, which is in charge of showing the next image in the images array.
+//The coefficient modulus operator% increases currentIndex by 1 and wraps it around to 0 when it reaches the end of the images array.
+//Sets the src property of the current image in the images array as the value for the imageElement's src attribute.
+//Sets the caption property of the currently displayed image in the images array as the textContent of the captionElement.
+
+  </script>
+</body>
+</html>
